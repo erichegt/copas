@@ -40,5 +40,8 @@ class Player
     another_player.cards_to_discard.clear
   end
   
+  def as_json(options={})
+    {:player => {:position => self.position.value}}
+  end
 
 end

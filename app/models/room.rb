@@ -10,13 +10,6 @@ class Room
   
   def receive_player(player)
     @players_in_position.store(player.position.value, player)
-    
-    #     if (@players_in_position.empty?)
-    #       @players_in_position.store( :north, Player.new(Position.new(:north)) )
-    #     else 
-    #       position = @players_in_position.values.last.position.next
-    #       @players_in_position.store(position.value , Player.new(position) )
-    #     end
   end
   
   def start_game
@@ -27,6 +20,10 @@ class Room
   
   def players
     @players_in_position.values
+  end
+  
+  def as_json(options={})
+    {:players => @players_in_position.values}
   end
   
 end
