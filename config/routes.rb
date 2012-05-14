@@ -1,4 +1,9 @@
 Copas::Application.routes.draw do
+  
+    get "avaliableRooms" => "copas#mostra_salas"
+    
+    get "enterRoom" => "copas#entra_na_sala"    
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
